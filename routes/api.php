@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CleanController;
 use App\Http\Controllers\PlantacionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,3 +41,13 @@ Route::post('/limpiezas/create', [CleanController::class, 'store'])->name('activ
 Route::put('/limpiezas/update/{id}', [CleanController::class, 'update'])->name('limpiezas.update');
 
 Route::delete('/limpiezas/delete/{id}', [CleanController::class, 'delete'])->name('limpiezas.delete');
+
+// USERS
+
+Route::get('/usuarios', [UserController::class, 'index'])->name('usuarios.index');
+
+Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('usuarios.show');
+
+Route::post('/usuarios/create', [UserController::class, 'store'])->name('usuario.store');
+
+Route::delete('/usuarios/delete/{id}', [UserController::class, 'delete'])->name('usuarios.delete');
